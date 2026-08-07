@@ -1,0 +1,93 @@
+[
+  {
+    "id": "28170e01-e478-486c-bae9-6777c6342152",
+    "categoryId": "people",
+    "state": "dance",
+    "name": "Baila",
+    "duration": 6000,
+    "loop": true,
+    "tracks": {
+      "body": [
+        {
+          "t": 0,
+          "dx": 0,
+          "dy": 0,
+          "drot": 0,
+          "dscale": 1,
+          "opacity": 1
+        },
+        {
+          "t": 1500,
+          "dx": 0,
+          "dy": 0,
+          "drot": 10,
+          "dscale": 1,
+          "opacity": 1
+        },
+        {
+          "t": 3000,
+          "dx": 0,
+          "dy": 0,
+          "drot": 0,
+          "dscale": 1,
+          "opacity": 1
+        },
+        {
+          "t": 4500,
+          "dx": 0,
+          "dy": 0,
+          "drot": -10,
+          "dscale": 1,
+          "opacity": 1
+        },
+        {
+          "t": 6000,
+          "dx": 0,
+          "dy": 0,
+          "drot": 0,
+          "dscale": 1,
+          "opacity": 1
+        }
+      ],
+      "jacket": [
+        {
+          "t": 0,
+          "dx": 0,
+          "dy": 0,
+          "drot": 0,
+          "dscale": 1,
+          "opacity": 1
+        }
+      ],
+      "head": [
+        {
+          "t": 0,
+          "dx": 0,
+          "dy": 10,
+          "drot": 5,
+          "dscale": 1,
+          "opacity": 1
+        },
+        {
+          "t": 3000,
+          "dx": 0,
+          "dy": 10,
+          "drot": -5,
+          "dscale": 1.5,
+          "opacity": 1
+        },
+        {
+          "t": 6000,
+          "dx": 0,
+          "dy": 10,
+          "drot": 0,
+          "dscale": 1,
+          "opacity": 1
+        }
+      ],
+      "hat": [],
+      "glasses": []
+    },
+    "createdAt": "2026-08-07T19:24:53.187Z"
+  }
+]

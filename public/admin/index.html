@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Character Studio · Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Character Studio <span>· admin</span></h1>
+  <nav>
+    <button class="tab active" data-tab="categorias">Categorías</button>
+    <button class="tab" data-tab="elementos">Elementos</button>
+    <button class="tab" data-tab="animaciones">Animaciones</button>
+    <button class="tab" data-tab="preview">Vista previa</button>
+  </nav>
+</header>
+
+<!-- ============ CATEGORÍAS ============ -->
+<section id="tab-categorias" class="panel-view active">
+  <div class="card">
+    <h2>Nueva categoría</h2>
+    <p class="hint">Ej: "personas", "carros". Los slots definen las capas y su orden de dibujo (de atrás hacia adelante).</p>
+    <label>Nombre <input id="catName" placeholder="personas"></label>
+    <label>Slots (separados por coma, en orden) <input id="catSlots" placeholder="body,jacket,head,hat,glasses"></label>
+    <div class="row">
+      <label>Ancho referencia (px) <input id="catW" type="number" value="220"></label>
+      <label>Alto referencia (px) <input id="catH" type="number" value="220"></label>
+    </div>
+    <button id="btnCreateCat">Crear categoría</button>
+    <p id="catMsg" class="msg"></p>
+  </div>
+  <div class="card">
+    <h2>Categorías existentes</h2>
+    <div id="catList" class="list"></div>
+  </div>
+</section>
+
+<!-- ============ ELEMENTOS ============ -->
+<section id="tab-elementos" class="panel-view">
+  <div class="card">
+    <h2>Subir imagen</h2>
+    <label>Categoría
+      <select id="elCategory"></select>
+    </label>
+    <label>Slot
+      <select id="elSlot"></select>
+    </label>
+    <label>Nombre (opcional) <input id="elName" placeholder="gorro rojo"></label>
+    <label>Imagen (PNG o WEBP, fondo transparente) <input id="elFile" type="file" accept="image/png,image/webp"></label>
+    <button id="btnUpload">Subir</button>
+    <p id="elMsg" class="msg"></p>
+  </div>
+
+  <div class="card">
+    <h2>Posicionar elemento</h2>
+    <p class="hint">Elige un elemento subido, arrástralo sobre el lienzo de referencia y ajusta rotación/escala. Se guarda para que encaje siempre en el mismo lugar al generar personajes.</p>
+    <div class="row">
+      <select id="posElementSelect"></select>
+      <button id="btnReloadElements" class="secondary">↻ recargar lista</button>
+    </div>
+    <div class="editor-stage">
+      <canvas id="posCanvas" width="360" height="360"></canvas>
+      <div class="controls">
+        <label>Offset X <input id="posX" type="range" min="-150" max="150" value="0"></label>
+        <label>Offset Y <input id="posY" type="range" min="-150" max="150" value="0"></label>
+        <label>Rotación <input id="posRot" type="range" min="-180" max="180" value="0"></label>
+        <label>Escala <input id="posScale" type="range" min="0.3" max="2" step="0.05" value="1"></label>
+        <button id="btnSavePos">Guardar posición</button>
+        <button id="btnDeleteEl" class="danger">Eliminar elemento</button>
+      </div>
+    </div>
+    <p id="posMsg" class="msg"></p>
+  </div>
+</section>
+
+<!-- ============ ANIMACIONES ============ -->
+<section id="tab-animaciones" class="panel-view">
+  <div class="card">
+    <h2>Editar clip de animación</h2>
+    <div class="row">
+      <label>Categoría <select id="animCategory"></select></label>
+      <label>Estado <input id="animState" placeholder="idle / walk / talk / saludo..." value="idle"></label>
+      <label>Nombre <input id="animName" placeholder="idle suave"></label>
+    </div>
+    <div class="row">
+      <label>Duración (ms) <input id="animDuration" type="number" value="1000"></label>
+      <label><input id="animLoop" type="checkbox" checked> repetir en bucle</label>
+    </div>
+    <div id="animTracks"></div>
+    <div class="row">
+      <button id="btnPreviewAnim" class="secondary">▶ Previsualizar</button>
+      <button id="btnSaveAnim">Guardar animación</button>
+    </div>
+    <p id="animMsg" class="msg"></p>
+  </div>
+  <div class="card">
+    <h2>Vista previa del clip</h2>
+    <canvas id="animCanvas" width="320" height="320"></canvas>
+    <h3>Clips existentes</h3>
+    <div id="animList" class="list"></div>
+  </div>
+</section>
+
+<!-- ============ PREVIEW GENERAL ============ -->
+<section id="tab-preview" class="panel-view">
+  <div class="card">
+    <h2>Generar personaje aleatorio</h2>
+    <div class="row">
+      <select id="prevCategory"></select>
+      <select id="prevState"><option value="idle">idle</option><option value="walk">walk</option><option value="talk">talk</option></select>
+      <button id="btnPrevRandom">🎲 Generar</button>
+    </div>
+    <canvas id="prevCanvas" width="360" height="360"></canvas>
+  </div>
+</section>
+
+<script src="/shared/engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

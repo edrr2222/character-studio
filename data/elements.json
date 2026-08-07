@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2da3759d-9343-4ad0-a194-ad825c5c8b9e",
+    "categoryId": "people",
+    "slot": "body",
+    "name": "cuerpo 1",
+    "imagePath": "/uploads/people/body/ebae33b8-6214-49f1-88bb-21daaec9eba6.png",
+    "offsetX": -3,
+    "offsetY": 41,
+    "rotation": 0,
+    "scale": 1,
+    "createdAt": "2026-08-07T17:47:16.641Z"
+  },
+  {
+    "id": "fa0aba83-6e85-4869-85a0-27fd17517ac6",
+    "categoryId": "people",
+    "slot": "head",
+    "name": "cabeza",
+    "imagePath": "/uploads/people/head/a880e2c1-7825-4e79-a1d5-e81455b6a1e0.png",
+    "offsetX": -3,
+    "offsetY": 1,
+    "rotation": 0,
+    "scale": 1,
+    "createdAt": "2026-08-07T17:47:52.577Z"
+  }
+]

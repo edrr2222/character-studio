@@ -1,0 +1,16 @@
+[
+  {
+    "id": "people",
+    "name": "people",
+    "slots": [
+      "body",
+      "jacket",
+      "head",
+      "hat",
+      "glasses"
+    ],
+    "refWidth": 220,
+    "refHeight": 220,
+    "createdAt": "2026-08-07T17:43:51.406Z"
+  }
+]
